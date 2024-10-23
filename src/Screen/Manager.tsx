@@ -40,6 +40,7 @@ const Manager = () => {
     const Results = async () => {
       if (Category == "Status") {
         const { data } = alltasks;
+        // @ts-ignore
         const tickets = data.tickets;
         const res: any = {
           Backlog: [],
@@ -54,6 +55,7 @@ const Manager = () => {
         setTicketState(res);
       } else if (Category == "User") {
         const { data } = alltasks;
+        // @ts-ignore
         const tickets = data.tickets;
         const res: any = {};
         tickets.forEach((ticket: Ticket) => {
