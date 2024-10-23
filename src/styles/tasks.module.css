@@ -1,0 +1,40 @@
+.flex {
+  display: flex;
+}
+.container {
+  width: 20%;
+  margin: 20px;
+}
+.titleDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleLeftDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.titleRightDiv {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    width: 25%;
+  }
+}
+
+@media (max-width:1000px) {
+  .container {
+    width : 40%;
+  }
+}
+
+@media (max-width : 600px) {
+  .container {
+    width: 90%;
+  }
+}

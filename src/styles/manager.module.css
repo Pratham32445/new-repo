@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width : 600px) {
+    .container {
+        display: block;
+    }
+}
