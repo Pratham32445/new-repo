@@ -7,7 +7,7 @@ import { Ticket } from "../types";
 import styles from "../styles/manager.module.css";
 
 interface User {
-  id : string;
+  id: string;
 }
 
 export const getUserName = (userId: string, allTasks: any) => {
@@ -39,7 +39,8 @@ const Manager = () => {
 
     const Results = async () => {
       if (Category == "Status") {
-        const { tickets } = alltasks as { tickets: Ticket[] };
+        const { data } = alltasks;
+        const tickets = data.tickets;
         const res: any = {
           Backlog: [],
           Todo: [],
@@ -52,13 +53,15 @@ const Manager = () => {
         });
         setTicketState(res);
       } else if (Category == "User") {
-        const { tickets } = alltasks as { tickets: Ticket[] };
+        const { data } = alltasks;
+        const tickets = data.tickets;
         const res: any = {};
         tickets.forEach((ticket: Ticket) => {
           const userName = getUserName(ticket.userId, alltasks);
           if (res.hasOwnProperty(userName)) res[userName].push(ticket);
           else res[userName] = [ticket];
         });
+        console.log(tickets);
         setTicketState(res);
       } else if (Category == "Priority") {
         const { data } = alltasks;

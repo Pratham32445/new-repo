@@ -61,7 +61,7 @@ const Header = () => {
             </div>
             <div className={styles.ordering}>
               <p>Ordering</p>
-              <select onChange={handleStateChange}>
+              <select>
                 <option value="asc">Priority</option>
                 <option value="desc">Title</option>
               </select>

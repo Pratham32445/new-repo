@@ -8,7 +8,6 @@ import { iconMap, Priority, PriorityValue } from "../utils";
 
 // @ts-ignore
 const Tasks = ({ tickets, title, allTasks, Category }) => {
-
   return (
     <div className={styles.container}>
       <div className={styles.titleDiv}>
@@ -24,19 +23,21 @@ const Tasks = ({ tickets, title, allTasks, Category }) => {
           )}
           {Category == "Priority" && tickets.length && (
             <img
-            // @ts-ignore
+              // @ts-ignore
               src={tickets[0].priority && Priority[tickets[0].priority]}
               style={{ width: 20, height: 20, borderRadius: "50%" }}
             />
           )}
-          {Category == "Status"  && (
+          {Category == "Status" && (
             <img
               src={iconMap[title]}
               style={{ width: 15, height: 15, borderRadius: "50%" }}
             />
           )}
           {/* @ts-expect-error */}
-          <p>{Category == "Priority" ? PriorityValue[title] : title}</p>
+          <p>{Category == "Status" && title}</p>
+          <p>{Category == "Priority" && PriorityValue[title]}</p>
+          <p>{Category == "User" && title}</p>
           <p>{tickets.length}</p>
         </div>
         <div className={styles.titleRightDiv}>
